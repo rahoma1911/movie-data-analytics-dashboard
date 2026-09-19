@@ -16,7 +16,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# العنوان مع الصورة المحلية
+# The title with the local image
 st.markdown("""
     <div style="display: flex; align-items: center; justify-content: center;">
         <h1 style="font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 55px; margin-right: 0px;">Statistical Overview</h1>
@@ -24,8 +24,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# إضافة شعار في السايد بار
-st.sidebar.image("moviel__1_-removebg-preview.png", width=200)  # استبدل "path_to_logo.png" بمسار الشعار الخاص بك
+# Add a logo to the sidebar
+st.sidebar.image("moviel__1_-removebg-preview.png", width=200)  # Replace "path_to_logo.png" with the path to your own logo
 
 
 # Load the data 
@@ -48,8 +48,8 @@ df = df[df["movie_year"] > 0]
 years = sorted(df["movie_year"].unique())
 
 # Remove the last year from start_year options
-start_years = years[:-1]  # كل السنين ما عدا آخر واحدة
-end_years = years          # كل السنين متاحة كـ end
+start_years = years[:-1]  # all years except the last one
+end_years = years          # all years are available as end
 
 with col1:
     start_year = st.selectbox("Select Start Year", start_years, index=0)
@@ -60,12 +60,12 @@ with col2:
 # Validate range
 if start_year > end_year:
     st.warning("⚠️ Start year must be less than or equal to end year.")
-    st.stop()  # يوقف تنفيذ باقي الصفحة
+    st.stop()  # stops the execution of the rest of the page
 
 # Filter the data based on selected years
 df = df[(df["movie_year"] >= start_year) & (df["movie_year"] <= end_year)].copy()
 
-# خط فاصل 
+# Separator line 
 st.markdown("""
     <style>
         .custom-hr {
