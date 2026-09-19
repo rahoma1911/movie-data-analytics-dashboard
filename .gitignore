@@ -1,0 +1,25 @@
+# Dataset
+df1.csv
+
+# Virtual environment
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Project files not needed in GitHub
+*.pdf
+*.pptx
+
+# Streamlit
+.streamlit/
+
+# OS files
+.DS_Store
+Thumbs.db
